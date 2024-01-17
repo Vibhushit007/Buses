@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add your custom CSS file if needed -->
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- Add this link for W3.CSS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<style>
+    /* Custom CSS for changing link color on hover */
+    .link-dark {
+        color: rgb(0, 0, 0);
+        /* Default link color */
+    }
+
+    .link-dark:hover {
+        color: brown;
+        /* Link color on hover */
+    }
+
+
+    /* Custom CSS for full-height section */
+    body {
+        min-height: 100vh;
+        background-image: url("../static/black-frame-with-copy-space-top-view.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        /* background-color:lavender; */
+        /* Text color on the background */
+    }
+</style>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg  navbar-light" style="color: white;">
+        <a class="navbar-brand text-light" href="#">Hello {{ request.user }}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link  text-light" href="{% url 'edit_profile' %}">Edit Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'bus_list' %}">Book Ticket</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'timetable' %}">Bus Timetable</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'your_booking' %}">Your Bookings</a>
+                    <!-- Updated link to your bookings -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'logout_page' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Your Profile</h5>
+                        <p class="card-text">Update your profile information here.</p>
+                        <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bus Ticket Booking</h5>
+                        <p class="card-text">Book bus tickets here.</p>
+                        <a href="{% url 'bus_list' %}" class="btn btn-primary">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    <!-- Add Bootstrap JS and jQuery links here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
+</body>
+
+</html>

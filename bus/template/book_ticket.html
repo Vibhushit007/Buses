@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add your custom CSS styles here -->
+    <link rel="stylesheet" href="/static/custom.css">
+    
+
+</head>
+
+<body >
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand text-light " href="#">Ticket Booking System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-light " href="{% url 'bus_list' %}">Buses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'dashboard' %}">Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container text-light">
+        <h2>Book Tickets for {{ bus.name }}</h2>
+        <form method="post" class="form  new">
+            {% csrf_token %}
+            <div class="form-group Update">
+                <label for="num_tickets">{{ form.num_tickets.label }}</label>
+                {{ form.num_tickets }}
+            </div>
+            <div class="form-group">
+                <label for="name">{{ form.name.label }}</label>
+                {{ form.name }}
+            </div>
+            <div class="form-group">
+                <label for="address">{{ form.address.label }}</label>
+                {{ form.address }}
+            </div>
+            <div class="form-group">
+                <label for="phone">{{ form.phone.label }}</label>
+                {{ form.phone }}
+            </div>
+            <div class="form-group">
+                <label for="age">{{ form.age.label }}</label>
+                {{ form.age }}
+            </div>
+            <button type="submit" class="btn btn-primary hello">Book Ticket</button>
+        </form>
+        
+        <a href="{% url 'bus_list' %}" class="btn btn-secondary">Back to Bus List</a>
+    </div>
+    
+
+    <!-- Add Bootstrap JS scripts here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

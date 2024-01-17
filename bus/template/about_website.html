@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Website</title>
+    <!-- Include Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include your custom CSS file if needed -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom CSS for changing link color on hover */
+        .link-dark {
+            color: rgb(0, 0, 0);
+            /* Default link color */
+        }
+
+        .link-dark:hover {
+            color: brown;
+            /* Link color on hover */
+        }
+
+
+        /* Custom CSS for full-height section */
+        body {
+            min-height: 100vh;
+            background-image: url("../static/background.jpg") ;
+            background-size: cover;
+            background-position: center;
+            background-color:lavender;
+            background-attachment: fixed;
+            /* Text color on the background */
+        }
+    </style>
+</head>
+
+<body >
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg text-light">
+        <strong>
+            <h1 >Blue Bus</h1>
+        </strong>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="index.html"><strong>Home</strong></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-light">
+                    <h2>About Our Website</h2>
+                    <p>
+                        Welcome to Blue Bus - Your Ultimate Bus Management Solution!
+
+                        Our Mission
+
+                        At Blue Bus, we're on a mission to revolutionize the way you experience bus
+                        transportation. We aim to simplify and enhance the entire bus management process for passengers,
+                        bus operators, and administrators alike. Our commitment is to provide:
+
+                        - A seamless and efficient bus management system.
+                        - Improved passenger experiences through user-friendly booking and tracking.
+                        - Empowered bus operators with tools for efficient fleet management.
+                        - Assistance to administrators in optimizing routes, schedules, and resources.
+
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../static/bus.jpeg" alt="Website Image" class="img-fluid rounded-circle">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class=" text-light  fixed-bottom">
+        <div class="container text-center">
+            <p>&copy; 2023 Bus Management System</p>
+        </div>
+    </footer>
+
+    <!-- Include Bootstrap JS and any custom JS scripts here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

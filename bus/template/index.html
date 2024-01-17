@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+    /* Custom CSS for changing link color on hover */
+    .link-dark {
+        color:seashell;
+        /* Default link color */
+    }
+
+    .link-dark:hover {
+        color: greenyellow;
+        /* Link color on hover */
+    }
+
+
+    /* Custom CSS for full-height section */
+    body {
+        min-height: 100vh;
+        background-image: url("../static/black-frame-with-copy-space-top-view.jpg") ;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        /* background-color:lavender; */
+        /* Text color on the background */
+    }
+</style>
+
+<body >
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg text-light   >
+        <a class= "navbar-brand" href="#">Blue Bus</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="#services">Services</a>
+                </li>
+
+                <!-- Code for logout and also use hello {{request.user}} -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="{%url 'logout_page' %}">Logout</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="{%url 'login_view'%}" >Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="{%url 'register_view'%}">Register</a>
+                </li>
+            </ul>
+        </div>
+        
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container-fluid p-0" >
+        <div class=" text-light  mb-0">
+            <div class="container text-center">
+                <h1  class="display-4">Welcome to Blue Bus</h1>
+                <p class="lead">Efficiently manage your bus services with our user-friendly platform.</p>
+                <!-- <a href="#registerModal" class="btn btn-light btn-lg" data-toggle="modal">Get Started</a> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container text-light">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>About Us</h2>
+                    <p >Welcome to Blue Bus - <br> Your Ultimate Bus Management Solution!
+
+                        Our Mission
+
+                        At Blue Bus, we're on a mission to revolutionize the way you experience bus
+                        transportation.</p>
+                    <!-- Add a link to the "About Our Website" page -->
+                    <a href="about_website.html" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../static/download.jpeg" alt="Bus Image" class="img-fluid rounded-circle">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class=" py-5 text-light">
+        <div class="container">
+            <h2 class="text-center">Our Services</h2>
+            <div class="row">
+                <div class="col-md-4 text-dark">
+                    <div class="card mb-4">
+                        <a href="{%url 'login_view'%}"><img src="../static/booking.jpeg" alt="Service 1" class="card-img-top"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Booking</h5>
+                            <p class="card-text">Description of Service 1.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-dark">
+                    <div class="card mb-4">
+                       <a href="{%url 'timetable'%}"> <img src="../static/Bus612x612.jpeg" alt="Service 2" class="card-img-top"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Bus Time table</h5>
+                            <p class="card-text">Description of Service 2.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-dark">
+                    <div class="card mb-4">
+                       <a href="{%url 'login_view'%}"> <img src="../static/bustracking.jpeg" alt="Service 3" class="card-img-top"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Ticket Details</h5>
+                            <p class="card-text">Updated And Correct Ticket Details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- http://source.unsplash.com/208x138.6/?Bus Tracking  image link -->
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 text-light">
+        <div class="container">
+            <h2 class="text-center">Contact Us</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form method="POST" action="{% url 'contact' %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" name="Address" placeholder="Your Address">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    
+                </div>
+                <div class="col-md-6 text-light">
+                    <address>
+                        <strong>Blue Bus</strong><br>
+                        VIT BHOPAL<br>
+                        BHOPAL INDIA<br>
+                        <abbr title="Phone">P:</abbr> (123) 456-7890
+                    </address>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

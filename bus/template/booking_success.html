@@ -1,0 +1,60 @@
+<!-- booking_success.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Success</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS for changing link color on hover */
+        .link-dark {
+            color: rgb(0, 0, 0);
+            /* Default link color */
+        }
+    
+        .link-dark:hover {
+            color: brown;
+            /* Link color on hover */
+        }
+    
+    
+        /* Custom CSS for full-height section */
+        body{
+            min-height: 100vh;
+            background-image: url("/static/black-frame-with-copy-space-top-view.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            /* background-color:lavender; */
+            /* Text color on the background */
+        }
+    </style>
+</head>
+
+<body style="background-color:lavender;">
+    <div class="container mt-5">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Booking Successful! for {{ request.user }}</h4>
+            <p>Your booking has been confirmed. Thank you for choosing our service.</p>
+            <hr>
+            <p class="mb-0">You'll receive an email confirmation shortly. Have a great trip!</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript redirect to the bus list page after 5 seconds
+        setTimeout(function () {
+            window.location.href = "{% url 'bus_list' %}";
+        }, 5000);
+        // Redirect after 5 seconds (5000 milliseconds)
+    </script>
+
+    <!-- Add Bootstrap JS scripts here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

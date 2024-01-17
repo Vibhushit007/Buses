@@ -1,0 +1,67 @@
+<!-- ticket_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Details</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add your custom CSS file if needed -->
+    <link rel="stylesheet" href="/static/custom.css">
+    
+</head>
+<body  >
+    <!-- Navbar (You can keep the same navbar as in dashboard.html) -->
+    
+
+    <!-- Main Content (Ticket Details) -->
+    <div class="container mt-4 text-light">
+        <!-- Display booking details here -->
+        <h2>Ticket Details</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered text-light">
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Username</th>
+                            <th>Bus Route</th>
+                            <th>Departure Time</th>
+                            <th>Number of Tickets</th>
+                            <th>Price To Be Paid</th>
+                            <th>Seat Number</th>
+                            <th>Ticket Number</th>
+                            <th>Status</th>
+                            
+                            <!-- Add more columns for booking details as needed -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ booking.id }}</td>
+                            <td>{{ booking.user }}</td>
+                            <td>{{ booking.bus.name }}</td>
+                            <td>{{ booking.bus.departure_time }}</td>
+                            <td>{{ booking.num_tickets }}</td>
+                            <td>{{ booking.total_price }}</td>
+                            <td>{{ booking.seat_number }}</td>
+                            <td>{{ booking.ticket_number }}</td>
+                            <td>{{ booking.status }}</td>
+                            
+                            
+                            <!-- Add more columns with booking details as needed -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <button onclick="window.print()">Print</button>
+    </div>
+
+    <!-- Add Bootstrap JS and jQuery links here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
